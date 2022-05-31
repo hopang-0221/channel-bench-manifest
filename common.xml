@@ -14,13 +14,15 @@
   <!-- Remote repository collections -->
   <remote fetch="../seL4" name="seL4" />
   <remote fetch="../sel4proj" name="sel4proj"/>
+  <remote fetch="../niwis" name="niwis"/>
   <remote fetch="https://github.com/nanopb" name="nanopb" />
+  <remote fetch="../riscv" name="opensbi" />
 
   <!-- Kernel -->
-  <project name="seL4.git" path="kernel"/>
+  <project name="seL4.git" remote="niwis" revision="ariane/plic" path="kernel"/>
 
   <!-- Build system and build tools -->
-  <project name="seL4_tools.git" path="tools/seL4">
+  <project name="seL4_tools.git" path="tools/seL4" remote="niwis" revision="fix-centos">
     <linkfile src="cmake-tool/init-build.sh" dest="init-build.sh"/>
     <linkfile src="cmake-tool/griddle" dest="griddle"/>
   </project>
@@ -44,6 +46,7 @@
 
   <!-- External dependencies -->
   <project name="riscv-pk" remote="sel4proj" revision="fix-32bit" path="tools/riscv-pk"/>
+  <project name="opensbi" remote="opensbi" path="tools/opensbi"/>
   <project
     name="nanopb"
     path="tools/nanopb"

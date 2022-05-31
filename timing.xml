@@ -15,7 +15,7 @@
   <include name="master.xml"/>
 
   <!-- Using timing branches when necessary -->
-  <extend-project name="seL4_libs.git" revision="timing"/>
+  <extend-project name="seL4_libs.git" remote="niwis" revision="timing-riscv"/>
   <extend-project name="sel4bench.git" revision="timing"/>
-  <extend-project name="channel-bench.git" revision="timing"/>
+  <extend-project name="channel-bench.git" remote="niwis" revision="riscv"/>
 </manifest>
